@@ -8,4 +8,6 @@ class SuningSpider(scrapy.Spider):
     start_urls = ['https://list.suning.com/']
 
     def parse(self, response):
+        box = response.css(".title-box")
+
         pass
