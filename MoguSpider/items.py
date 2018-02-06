@@ -8,6 +8,9 @@
 import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, TakeFirst, Join
+import datetime
+
+
 
 
 class MoguspiderItem(scrapy.Item):
@@ -22,5 +25,23 @@ class MoguspiderItem(scrapy.Item):
 class MoguItemLoader(ItemLoader):
     #自定义itemloader
     default_output_processor = TakeFirst()
+
+class SuningSpiderItem(scrapy.Item):
+    Id = scrapy.Field()
+    Name = scrapy.Field()
+    SourceId = scrapy.Field()
+    ParentId = scrapy.Field()
+    CreatedDate = scrapy.Field()
+    SyncTime = scrapy.Field()
+    def get_insert_sql(self):
+        insert_sql = """
+            insert into suningCategory(name, sourceId, ParentId, createdDate, syncDate
+              ) VALUES (%s, %s, %s, %s, %s)
+        """
+        params = (
+            self["Name"], self["SourceId"],self["ParentId"],self["CreatedDate"],self["SyncTime"]
+        )
+
+        return insert_sql, params
 
 

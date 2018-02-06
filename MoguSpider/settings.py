@@ -65,8 +65,8 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'MoguSpider.pipelines.MoguspiderPipeline': 300,
-    'MoguSpider.pipelines.MysqlPipeline':1,
+    #'MoguSpider.pipelines.MoguspiderPipeline': 300,
+    'MoguSpider.pipelines.Mysql2Pipeline':1,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
