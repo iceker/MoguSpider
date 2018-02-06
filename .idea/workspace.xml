@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a613b9d4-c52e-444c-bdf8-4c6220310b9e" name="Default" comment="update">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MoguSpider.iml" afterPath="$PROJECT_DIR$/.idea/MoguSpider.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoguSpider/items.py" afterPath="$PROJECT_DIR$/MoguSpider/items.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoguSpider/pipelines.py" afterPath="$PROJECT_DIR$/MoguSpider/pipelines.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoguSpider/settings.py" afterPath="$PROJECT_DIR$/MoguSpider/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoguSpider/spiders/suning.py" afterPath="$PROJECT_DIR$/MoguSpider/spiders/suning.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -177,8 +169,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="441" />
-    <option name="y" value="77" />
+    <option name="x" value="656" />
+    <option name="y" value="282" />
     <option name="width" value="1085" />
     <option name="height" value="777" />
   </component>
@@ -298,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517642300939</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1517910715059</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1517910715059</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
