@@ -33,3 +33,4 @@ class Mysql2Pipeline(object):
         insert_sql, params = item.get_insert_sql()
         print(insert_sql, params)
         self.cursor.execute(insert_sql, params)
+        self.conn.commit()

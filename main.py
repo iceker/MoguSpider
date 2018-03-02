@@ -7,7 +7,7 @@ import sys
 import os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-execute(["scrapy", "crawl", "suning"])
+execute(["scrapy", "crawl", "wsy"])
 # execute(["scrapy", "crawl", "zhihu"])
 # execute(["scrapy", "crawl", "lagou"])
 

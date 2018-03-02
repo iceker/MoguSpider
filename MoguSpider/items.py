@@ -45,3 +45,38 @@ class SuningSpiderItem(scrapy.Item):
         return insert_sql, params
 
 
+class SuningSpiderItem(scrapy.Item):
+    Id = scrapy.Field()
+    Name = scrapy.Field()
+    SourceId = scrapy.Field()
+    ParentId = scrapy.Field()
+    CreatedDate = scrapy.Field()
+    SyncTime = scrapy.Field()
+    def get_insert_sql(self):
+        insert_sql = """
+            insert into suningCategory(name, sourceId, ParentId, createdDate, syncDate
+              ) VALUES (%s, %s, %s, %s, %s)
+        """
+        params = (
+            self["Name"], self["SourceId"],self["ParentId"],self["CreatedDate"],self["SyncTime"]
+        )
+
+        return insert_sql, params
+
+class WsySPiderItem(scrapy.Item):
+    Id = scrapy.Field()
+    Name = scrapy.Field()
+    SourceId = scrapy.Field()
+    ParentId = scrapy.Field()
+    CreatedDate = scrapy.Field()
+    SyncTime = scrapy.Field()
+    def get_insert_sql(self):
+        insert_sql = """
+            insert into wsyCategory(name, sourceId, ParentId, createdDate, syncDate
+              ) VALUES (%s, %s, %s, %s, %s)
+        """
+        params = (
+            self["Name"], self["SourceId"],self["ParentId"],self["CreatedDate"],self["SyncTime"]
+        )
+
+        return insert_sql, params

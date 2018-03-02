@@ -14,7 +14,7 @@ class SuningSpider(scrapy.Spider):
         search_divs = response.css(".search-main > div")
         for search_div in search_divs:
             firstId = search_div.css("div::attr(id)").extract_first("")
-            firstName = search_div.css("h2").extract_first("")
+            firstName = search_div.css("h2::text").extract_first("")
             suningItem = SuningSpiderItem()
             suningItem["Name"] = firstName
             suningItem["SourceId"] = firstId
