@@ -26,7 +26,7 @@ class MysqlPipeline(object):
 
 class Mysql2Pipeline(object):
     def __init__(self):
-        self.conn = MySQLdb.connect('127.0.0.1', 'root', 'root', 'cloudsoft_global', charset="utf8", use_unicode=True)
+        self.conn = MySQLdb.connect('101.132.122.230', 'root', 'root', 'cloudsoft_global', charset="utf8", use_unicode=True)
         self.cursor = self.conn.cursor()
 
     def process_item(self, item, spider):
