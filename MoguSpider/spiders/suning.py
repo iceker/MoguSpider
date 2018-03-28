@@ -29,9 +29,21 @@ class SuningSpider(scrapy.Spider):
                 secondId = martch_re.group(1)
                 secondName = box.css(".t-left a::attr(title)").extract_first("")
                 rights = box.css(".t-right a")
+                suningItem["Name"] = secondName
+                suningItem["SourceId"] = secondId
+                suningItem["ParentId"] = firstId
+                suningItem['CreatedDate'] = datetime.datetime.now()
+                suningItem['SyncTime'] = datetime.datetime.now()
+                yield suningItem
                 for right in rights:
                     thirdUrl = right.css("a::attr(href)").extract_first("")
                     martch_re = re.match(".*-(\d+)-.*",thirdUrl);
                     thirdId = martch_re.group(1)
                     thirdName = right.css("a::text").extract_first("")
+                    suningItem["Name"] = thirdName
+                    suningItem["SourceId"] = thirdId
+                    suningItem["ParentId"] = secondId
+                    suningItem['CreatedDate'] = datetime.datetime.now()
+                    suningItem['SyncTime'] = datetime.datetime.now()
+                    yield suningItem
         pass
