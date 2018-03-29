@@ -48,4 +48,5 @@ class WsySpider(scrapy.Spider):
                 wsyItem['CreatedDate'] = datetime.datetime.now()
                 wsyItem['SyncTime'] = datetime.datetime.now()
                 yield wsyItem
+
         pass
