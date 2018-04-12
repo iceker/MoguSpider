@@ -62,3 +62,57 @@ class WsySPiderItem(scrapy.Item):
         )
 
         return insert_sql, params
+
+class ZwdSPiderItem(scrapy.Item):
+    Id = scrapy.Field()
+    Name = scrapy.Field()
+    SourceId = scrapy.Field()
+    ParentId = scrapy.Field()
+    CreatedDate = scrapy.Field()
+    SyncTime = scrapy.Field()
+    def get_insert_sql(self):
+        insert_sql = """
+            insert into zwdcategories(name, sourceId, ParentId, createdDate, syncTime
+              ) VALUES (%s, %s, %s, %s, %s)
+        """
+        params = (
+            self["Name"], self["SourceId"],self["ParentId"],self["CreatedDate"],self["SyncTime"]
+        )
+
+        return insert_sql, params
+
+class ViviSPiderItem(scrapy.Item):
+    Id = scrapy.Field()
+    Name = scrapy.Field()
+    SourceId = scrapy.Field()
+    ParentId = scrapy.Field()
+    CreatedDate = scrapy.Field()
+    SyncTime = scrapy.Field()
+    def get_insert_sql(self):
+        insert_sql = """
+            insert into vivicategories(name, sourceId, ParentId, createdDate, syncTime
+              ) VALUES (%s, %s, %s, %s, %s)
+        """
+        params = (
+            self["Name"], self["SourceId"],self["ParentId"],self["CreatedDate"],self["SyncTime"]
+        )
+
+        return insert_sql, params
+
+class YhdSPiderItem(scrapy.Item):
+    Id = scrapy.Field()
+    Name = scrapy.Field()
+    SourceId = scrapy.Field()
+    ParentId = scrapy.Field()
+    CreatedDate = scrapy.Field()
+    SyncTime = scrapy.Field()
+    def get_insert_sql(self):
+        insert_sql = """
+            insert into vivicategories(name, sourceId, ParentId, createdDate, syncTime
+              ) VALUES (%s, %s, %s, %s, %s)
+        """
+        params = (
+            self["Name"], self["SourceId"],self["ParentId"],self["CreatedDate"],self["SyncTime"]
+        )
+
+        return insert_sql, params
