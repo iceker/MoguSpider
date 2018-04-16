@@ -7,8 +7,14 @@ import datetime
 class YhdSpider(scrapy.Spider):
     name = 'yhd'
     allowed_domains = ['search.yhd.com']
-    start_urls = ['http://search.yhd.com/c1315-0-0',
-                  'http://search.yhd.com/c11729-0-0',
+    start_urls = ['http://search.yhd.com/c1315-0-0',#服饰内衣
+                  'http://search.yhd.com/c11729-0-0',#鞋靴
+                  'http://search.yhd.com/c9192-0-0',#医药保健
+                  'http://search.yhd.com/c738-0-0',#家用电器
+                  'http://search.yhd.com/c6728-0-0',#汽车用品
+                  'http://search.yhd.com/c652-0-0',#数码
+                  'http://search.yhd.com/c670-0-0',#电脑、办公
+
                   ]
     list_url = "http://search.yhd.com/c{0}-0-0"
     def parse(self, response):
@@ -24,6 +30,7 @@ class YhdSpider(scrapy.Spider):
             wsyItem["ParentId"] = "0"
             wsyItem['CreatedDate'] = datetime.datetime.now()
             wsyItem['SyncTime'] = datetime.datetime.now()
+            yield wsyItem
         secondlinks = response.xpath('//*[@id="group_attr"]/div[1]/div/div[2]/ul/li/a')
         for link in secondlinks:
             secondUrl = link.css("a::attr(href)").extract_first("")
@@ -37,6 +44,7 @@ class YhdSpider(scrapy.Spider):
                 wsyItem["ParentId"] = pid
                 wsyItem['CreatedDate'] = datetime.datetime.now()
                 wsyItem['SyncTime'] = datetime.datetime.now()
+                yield wsyItem
             request = scrapy.Request(self.list_url.format(secondpid), callback=self.parse2)
             request.meta['parentId'] = secondpid
             yield request
@@ -56,4 +64,5 @@ class YhdSpider(scrapy.Spider):
                 wsyItem["ParentId"] = response.meta['parentId']
                 wsyItem['CreatedDate'] = datetime.datetime.now()
                 wsyItem['SyncTime'] = datetime.datetime.now()
+                yield wsyItem
         pass

@@ -108,7 +108,7 @@ class YhdSPiderItem(scrapy.Item):
     SyncTime = scrapy.Field()
     def get_insert_sql(self):
         insert_sql = """
-            insert into vivicategories(name, sourceId, ParentId, createdDate, syncTime
+            insert into yhdcategories(name, sourceId, ParentId, createdDate, syncTime
               ) VALUES (%s, %s, %s, %s, %s)
         """
         params = (

@@ -4,12 +4,14 @@ import scrapy
 
 class TestSpider(scrapy.Spider):
     name = 'test'
-    allowed_domains = ['mogujie.com']
-    start_urls = ['http://shop.mogujie.com/detail/1kj33me?acm=3.ms.1_4_1kj33me.15.1633-22922.05NORqE2aMkly.t_05NNORqE2aMkly-lc_3']
+    allowed_domains = ['vvic.com']
+    start_urls = ['http://qq.com']
 
     def parse(self, response):
-        request = scrapy.Request(response.url,callback=self.parse2)
+        id = 5773623
+        request = scrapy.Request("https://app.vvic.com/v1/item?id=" + str(id), callback=self.parsea)
         yield request
 
-    def parse2(self,response):
+    def parsea(self,response):
+        id=11
         pass
